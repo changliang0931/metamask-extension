@@ -416,10 +416,10 @@ describe('MetaMask Import UI', function () {
         await driver.fill('#password', 'correct horse battery staple');
         await driver.press('#password', driver.Key.ENTER);
 
-        // choose Connect Hardware Wallet from the account menu
+        // choose Connect hardware wallet from the account menu
         await driver.clickElement('.account-menu__icon');
         await driver.clickElement({
-          text: 'Connect Hardware Wallet',
+          text: 'Connect hardware wallet',
           tag: 'div',
         });
         await driver.delay(regularDelayMs);

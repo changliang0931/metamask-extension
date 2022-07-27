@@ -105,7 +105,7 @@ describe('MetaMask', function () {
     });
 
     it('clicks the "Create New Wallet" option', async function () {
-      await driver.clickElement({ text: 'Create a Wallet', tag: 'button' });
+      await driver.clickElement({ text: 'Create a wallet', tag: 'button' });
       await driver.delay(largeDelayMs);
     });
 
@@ -315,10 +315,10 @@ describe('MetaMask', function () {
       await driver.fill('#custom-address', tokenAddress);
       await driver.delay(regularDelayMs);
 
-      await driver.clickElement({ text: 'Add Custom Token', tag: 'button' });
+      await driver.clickElement({ text: 'Add custom token', tag: 'button' });
       await driver.delay(regularDelayMs);
 
-      await driver.clickElement({ text: 'Import Tokens', tag: 'button' });
+      await driver.clickElement({ text: 'Import tokens', tag: 'button' });
       await driver.delay(regularDelayMs);
     });
 

@@ -91,7 +91,7 @@ describe('MetaMask Responsive UI', function () {
           await driver.clickElement('.btn-primary');
 
           // clicks the "Create New Wallet" option
-          await driver.clickElement({ text: 'Create a Wallet', tag: 'button' });
+          await driver.clickElement({ text: 'Create a wallet', tag: 'button' });
 
           // accepts a secure password
           await driver.fill(

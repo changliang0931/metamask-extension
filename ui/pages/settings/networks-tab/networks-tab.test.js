@@ -36,7 +36,7 @@ describe('NetworksTab Component', () => {
     expect(queryByText('Rinkeby Test Network')).toBeInTheDocument();
     expect(queryByText('Goerli Test Network')).toBeInTheDocument();
     expect(queryByText('Kovan Test Network')).toBeInTheDocument();
-    expect(queryByText('Add Network')).toBeInTheDocument();
+    expect(queryByText('Add network')).toBeInTheDocument();
   });
   it('should render add network form correctly', () => {
     const { queryByText } = renderComponent({

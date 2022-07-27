@@ -65,7 +65,7 @@ describe('ConfirmAddSuggestedToken Component', () => {
     expect(screen.getByText('Balance')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Cancel' })).toBeInTheDocument();
     expect(
-      screen.getByRole('button', { name: 'Add Token' }),
+      screen.getByRole('button', { name: 'Add token' }),
     ).toBeInTheDocument();
   });
 
@@ -82,7 +82,7 @@ describe('ConfirmAddSuggestedToken Component', () => {
 
   it('should dispatch acceptWatchAsset when clicking the "Add Token" button', () => {
     renderComponent();
-    const addTokenBtn = screen.getByRole('button', { name: 'Add Token' });
+    const addTokenBtn = screen.getByRole('button', { name: 'Add token' });
 
     fireEvent.click(addTokenBtn);
     expect(acceptWatchAsset).toHaveBeenCalled();

@@ -63,7 +63,7 @@ describe('ConfirmImportToken Component', () => {
   it('should render', () => {
     renderComponent();
 
-    const [title, importTokensBtn] = screen.queryAllByText('Import Tokens');
+    const [title, importTokensBtn] = screen.queryAllByText('Import tokens');
 
     expect(title).toBeInTheDocument(title);
     expect(
@@ -113,7 +113,7 @@ describe('ConfirmImportToken Component', () => {
     renderComponent(mockPendingTokens);
 
     const importTokensBtn = screen.getByRole('button', {
-      name: 'Import Tokens',
+      name: 'Import tokens',
     });
 
     await fireEvent.click(importTokensBtn);

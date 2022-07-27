@@ -149,7 +149,7 @@ describe('Account Menu', () => {
     });
   });
 
-  describe('Connect Hardware Wallet', () => {
+  describe('Connect hardware wallet', () => {
     let connectHardwareWallet;
 
     it('renders import account item', () => {

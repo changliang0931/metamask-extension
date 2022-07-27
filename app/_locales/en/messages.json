@@ -557,7 +557,7 @@
     "message": "Connect account or create new"
   },
   "connectHardwareWallet": {
-    "message": "Connect Hardware Wallet"
+    "message": "Connect hardware wallet"
   },
   "connectManually": {
     "message": "Manually connect to current site"
@@ -623,7 +623,7 @@
     "message": "Connecting to Kovan test network"
   },
   "connectingToMainnet": {
-    "message": "Connecting to Ethereum main network"
+    "message": "Connecting to Ethereum Mainnet"
   },
   "connectingToRinkeby": {
     "message": "Connecting to Rinkeby test network"
@@ -1082,7 +1082,7 @@
     "message": "You passed the test - keep your Secret Recovery Phrase safe, it's your responsibility!"
   },
   "endOfFlowMessage10": {
-    "message": "All Done"
+    "message": "All done"
   },
   "endOfFlowMessage2": {
     "message": "Tips on storing it safely"
@@ -1117,7 +1117,7 @@
     "message": "Illegal character for ENS."
   },
   "ensNotFoundOnCurrentNetwork": {
-    "message": "ENS name not found on the current network. Try switching to Ethereum main network."
+    "message": "ENS name not found on the current network. Try switching to Ethereum Mainnet."
   },
   "ensNotSupportedOnNetwork": {
     "message": "Network does not support ENS"
@@ -1799,10 +1799,10 @@
     "message": "Future transactions will queue after this one."
   },
   "mainnet": {
-    "message": "Ethereum main network"
+    "message": "Ethereum Mainnet"
   },
   "mainnetToken": {
-    "message": "This address matches a known Ethereum main network token address. Recheck the contract address and network for the token you are trying to add."
+    "message": "This address matches a known Ethereum Mainnet token address. Recheck the contract address and network for the token you are trying to add."
   },
   "makeAnotherSwap": {
     "message": "Create a new swap"
@@ -2176,7 +2176,7 @@
     "description": "The 'call to action' on the button, or link, of the 'Visit in Settings' notification. Upon clicking, users will be taken to Settings page."
   },
   "notifications10DescriptionOne": {
-    "message": "Improved token detection is currently available on Ethereum main network, Polygon, BSC, and Avalanche networks. More to come!"
+    "message": "Improved token detection is currently available on Ethereum Mainnet, Polygon, BSC, and Avalanche networks. More to come!"
   },
   "notifications10DescriptionThree": {
     "message": "Token detection feature is ON by default. But you can disable it from Settings."
@@ -2269,7 +2269,7 @@
     "description": "Description of a notification in the 'See What's New' popup. Describes changes for ledger and EIP1559 in v10.1.0"
   },
   "notifications7DescriptionTwo": {
-    "message": "To complete transactions on Ethereum main network, make sure your Ledger device has the latest firmware.",
+    "message": "To complete transactions on Ethereum Mainnet, make sure your Ledger device has the latest firmware.",
     "description": "Description of a notification in the 'See What's New' popup. Describes the need to update ledger firmware."
   },
   "notifications7Title": {
@@ -3503,7 +3503,7 @@
     "message": "Request for quotation"
   },
   "swapReviewSwap": {
-    "message": "Review Swap"
+    "message": "Review swap"
   },
   "swapSearchForAToken": {
     "message": "Search for a token"
@@ -3750,7 +3750,7 @@
     "message": "Token detection is currently available on $1. $2"
   },
   "tokenDetectionAnnouncement": {
-    "message": "New! Improved token detection is available on Ethereum main network as an experimental feature. $1"
+    "message": "New! Improved token detection is available on Ethereum Mainnet as an experimental feature. $1"
   },
   "tokenDetectionToggleDescription": {
     "message": "ConsenSys’ token API aggregates a list of tokens from various third party token lists. Turning it off will stop detecting new tokens added to your wallet, but will keep the option to search for tokens to import."
