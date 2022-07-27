@@ -204,7 +204,7 @@ describe('MetaMask Import UI', function () {
         // Imports an account with private key
         // choose Create account from the account menu
         await driver.clickElement('.account-menu__icon');
-        await driver.clickElement({ text: 'Import Account', tag: 'div' });
+        await driver.clickElement({ text: 'Import account', tag: 'div' });
 
         // enter private key',
         await driver.fill('#private-key-box', testPrivateKey1);
@@ -232,7 +232,7 @@ describe('MetaMask Import UI', function () {
 
         // Imports and removes an account
         // choose Create account from the account menu
-        await driver.clickElement({ text: 'Import Account', tag: 'div' });
+        await driver.clickElement({ text: 'Import account', tag: 'div' });
         // enter private key
         await driver.fill('#private-key-box', testPrivateKey2);
         await driver.clickElement({ text: 'Import', tag: 'button' });
@@ -306,7 +306,7 @@ describe('MetaMask Import UI', function () {
 
         // Imports an account with JSON file
         await driver.clickElement('.account-menu__icon');
-        await driver.clickElement({ text: 'Import Account', tag: 'div' });
+        await driver.clickElement({ text: 'Import account', tag: 'div' });
 
         await driver.clickElement('.new-account-import-form__select');
         await driver.clickElement({ text: 'JSON File', tag: 'option' });
@@ -379,7 +379,7 @@ describe('MetaMask Import UI', function () {
 
         // choose Import Account from the account menu
         await driver.clickElement('.account-menu__icon');
-        await driver.clickElement({ text: 'Import Account', tag: 'div' });
+        await driver.clickElement({ text: 'Import account', tag: 'div' });
 
         // enter private key',
         await driver.fill('#private-key-box', testPrivateKey);

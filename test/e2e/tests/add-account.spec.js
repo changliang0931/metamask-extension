@@ -233,7 +233,7 @@ describe('Add account', function () {
 
         // import with private key
         await driver.clickElement('.account-menu__icon');
-        await driver.clickElement({ text: 'Import Account', tag: 'div' });
+        await driver.clickElement({ text: 'Import account', tag: 'div' });
 
         // enter private key',
         await driver.fill('#private-key-box', testPrivateKey);

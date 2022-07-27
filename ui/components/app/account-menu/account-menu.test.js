@@ -132,7 +132,7 @@ describe('Account Menu', () => {
     });
   });
 
-  describe('Import Account', () => {
+  describe('Import account', () => {
     let importAccount;
 
     it('renders import account item', () => {
