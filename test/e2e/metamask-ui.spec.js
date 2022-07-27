@@ -307,7 +307,7 @@ describe('MetaMask', function () {
 
     it('picks the newly created Test token', async function () {
       await driver.clickElement({
-        text: 'Custom Token',
+        text: 'Custom token',
         tag: 'button',
       });
       await driver.delay(regularDelayMs);
