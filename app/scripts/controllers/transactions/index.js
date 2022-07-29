@@ -377,6 +377,22 @@ export default class TransactionController extends EventEmitter {
   }
 
   /**
+   * @param {string} txHash - transaction hash
+   * @returns {TransactionMeta} the txMeta who matches the given hash if none found
+   * for the network returns undefined
+   */
+  _getTransactionByHash(txHash) {
+    const { transactions } = this.store.getState();
+    const txByHash = Object.values(transactions).filter((tx) => {
+      if (tx.hash && txHash && tx.hash === txHash) {
+        return tx;
+      }
+      return undefined;
+    });
+    return txByHash[0];
+  }
+
+  /**
    * @param {number} txId
    * @returns {boolean}
    */
@@ -2008,6 +2024,7 @@ export default class TransactionController extends EventEmitter {
       },
       defaultGasEstimates,
       originalType,
+      replacedBy,
       metamaskNetworkId: network,
     } = txMeta;
     const { transactions } = this.store.getState();
@@ -2110,6 +2127,18 @@ export default class TransactionController extends EventEmitter {
       transactionContractMethod = transactions[id]?.contractMethodName;
     }
 
+    const replacedTxMeta = this._getTransactionByHash(replacedBy);
+
+    let transactionReplaced;
+    if (extraParams?.dropped) {
+      transactionReplaced = TRANSACTION_TYPES.OTHER;
+      if (replacedTxMeta?.type === TRANSACTION_TYPES.CANCEL) {
+        transactionReplaced = TRANSACTION_TYPES.CANCEL;
+      } else if (replacedTxMeta?.type === TRANSACTION_TYPES.RETRY) {
+        transactionReplaced = TRANSACTION_TYPES.RETRY;
+      }
+    }
+
     const properties = {
       chain_id: chainId,
       referrer,
@@ -2134,6 +2163,7 @@ export default class TransactionController extends EventEmitter {
       first_seen: time,
       gas_limit: gasLimit,
       transaction_contract_method: transactionContractMethod,
+      transaction_replaced: transactionReplaced,
       ...extraParams,
       ...gasParamsInGwei,
     };
@@ -2344,6 +2374,8 @@ export default class TransactionController extends EventEmitter {
   _dropTransaction(txId) {
     this.txStateManager.setTxStatusDropped(txId);
     const txMeta = this.txStateManager.getTransaction(txId);
-    this._trackTransactionMetricsEvent(txMeta, TRANSACTION_EVENTS.FINALIZED);
+    this._trackTransactionMetricsEvent(txMeta, TRANSACTION_EVENTS.FINALIZED, {
+      dropped: true,
+    });
   }
 }
