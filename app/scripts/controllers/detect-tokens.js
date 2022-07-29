@@ -1,4 +1,4 @@
-import Web3 from 'web3';
+import { ethers } from 'ethers';
 import { warn } from 'loglevel';
 import SINGLE_CALL_BALANCES_ABI from 'single-call-balance-checker-abi';
 import { SINGLE_CALL_BALANCES_ADDRESS } from '../constants/contracts';
@@ -89,17 +89,17 @@ export default class DetectTokensController {
    * @param tokens
    */
   async _getTokenBalances(tokens) {
-    const ethContract = this.web3.eth
-      .contract(SINGLE_CALL_BALANCES_ABI)
-      .at(SINGLE_CALL_BALANCES_ADDRESS);
-    return new Promise((resolve, reject) => {
-      ethContract.balances([this.selectedAddress], tokens, (error, result) => {
-        if (error) {
-          return reject(error);
-        }
-        return resolve(result);
-      });
-    });
+    const ethContract = new ethers.Contract(
+      SINGLE_CALL_BALANCES_ADDRESS,
+      SINGLE_CALL_BALANCES_ABI,
+      this.ethersProvider,
+    );
+
+    try {
+      return await ethContract.balances([this.selectedAddress], tokens);
+    } catch (error) {
+      return error;
+    }
   }
 
   /**
@@ -131,7 +131,9 @@ export default class DetectTokensController {
     }
 
     const tokensToDetect = [];
-    this.web3.setProvider(this._network._provider);
+    this.ethersProvider = new ethers.providers.Web3Provider(
+      this._network._provider,
+    );
     for (const tokenAddress in tokenList) {
       if (
         !this.tokenAddresses.find((address) =>
@@ -254,7 +256,7 @@ export default class DetectTokensController {
       return;
     }
     this._network = network;
-    this.web3 = new Web3(network._provider);
+    this.ethersProvider = new ethers.providers.Web3Provider(network._provider);
   }
 
   /**
