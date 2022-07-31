@@ -232,32 +232,6 @@
         "eslint": true
       }
     },
-    "@babel/plugin-proposal-class-properties": {
-      "packages": {
-        "@babel/plugin-proposal-class-properties>@babel/helper-create-class-features-plugin": true,
-        "@babel/preset-env>@babel/helper-plugin-utils": true
-      }
-    },
-    "@babel/plugin-proposal-class-properties>@babel/helper-create-class-features-plugin": {
-      "globals": {
-        "console.warn": true
-      },
-      "packages": {
-        "@babel/core": true,
-        "@babel/plugin-proposal-class-properties>@babel/helper-create-class-features-plugin>@babel/helper-member-expression-to-functions": true,
-        "@babel/preset-env>@babel/plugin-transform-classes>@babel/helper-annotate-as-pure": true,
-        "@babel/preset-env>@babel/plugin-transform-classes>@babel/helper-optimise-call-expression": true,
-        "@babel/preset-env>@babel/plugin-transform-classes>@babel/helper-replace-supers": true,
-        "depcheck>@babel/traverse>@babel/helper-environment-visitor": true,
-        "depcheck>@babel/traverse>@babel/helper-function-name": true,
-        "depcheck>@babel/traverse>@babel/helper-split-export-declaration": true
-      }
-    },
-    "@babel/plugin-proposal-class-properties>@babel/helper-create-class-features-plugin>@babel/helper-member-expression-to-functions": {
-      "packages": {
-        "@babel/core>@babel/types": true
-      }
-    },
     "@babel/plugin-proposal-nullish-coalescing-operator": {
       "packages": {
         "@babel/core": true,
@@ -337,7 +311,6 @@
       "packages": {
         "@babel/core>@babel/helper-compilation-targets": true,
         "@babel/core>@babel/types": true,
-        "@babel/plugin-proposal-class-properties": true,
         "@babel/plugin-proposal-nullish-coalescing-operator": true,
         "@babel/plugin-proposal-object-rest-spread": true,
         "@babel/plugin-proposal-optional-chaining": true,
@@ -347,6 +320,7 @@
         "@babel/preset-env>@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression": true,
         "@babel/preset-env>@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining": true,
         "@babel/preset-env>@babel/plugin-proposal-async-generator-functions": true,
+        "@babel/preset-env>@babel/plugin-proposal-class-properties": true,
         "@babel/preset-env>@babel/plugin-proposal-class-static-block": true,
         "@babel/preset-env>@babel/plugin-proposal-dynamic-import": true,
         "@babel/preset-env>@babel/plugin-proposal-export-namespace-from": true,
@@ -434,10 +408,16 @@
         "depcheck>@babel/traverse>@babel/helper-environment-visitor": true
       }
     },
+    "@babel/preset-env>@babel/plugin-proposal-class-properties": {
+      "packages": {
+        "@babel/preset-env>@babel/helper-plugin-utils": true,
+        "@babel/preset-env>@babel/plugin-proposal-private-methods>@babel/helper-create-class-features-plugin": true
+      }
+    },
     "@babel/preset-env>@babel/plugin-proposal-class-static-block": {
       "packages": {
-        "@babel/plugin-proposal-class-properties>@babel/helper-create-class-features-plugin": true,
         "@babel/preset-env>@babel/helper-plugin-utils": true,
+        "@babel/preset-env>@babel/plugin-proposal-private-methods>@babel/helper-create-class-features-plugin": true,
         "@babel/preset-env>@babel/plugin-syntax-class-static-block": true
       }
     },
@@ -481,14 +461,29 @@
     },
     "@babel/preset-env>@babel/plugin-proposal-private-methods": {
       "packages": {
-        "@babel/plugin-proposal-class-properties>@babel/helper-create-class-features-plugin": true,
-        "@babel/preset-env>@babel/helper-plugin-utils": true
+        "@babel/preset-env>@babel/helper-plugin-utils": true,
+        "@babel/preset-env>@babel/plugin-proposal-private-methods>@babel/helper-create-class-features-plugin": true
+      }
+    },
+    "@babel/preset-env>@babel/plugin-proposal-private-methods>@babel/helper-create-class-features-plugin": {
+      "globals": {
+        "console.warn": true
+      },
+      "packages": {
+        "@babel/core": true,
+        "@babel/preset-env>@babel/plugin-transform-classes>@babel/helper-annotate-as-pure": true,
+        "@babel/preset-env>@babel/plugin-transform-classes>@babel/helper-optimise-call-expression": true,
+        "@babel/preset-env>@babel/plugin-transform-classes>@babel/helper-replace-supers": true,
+        "@babel/preset-env>@babel/plugin-transform-classes>@babel/helper-replace-supers>@babel/helper-member-expression-to-functions": true,
+        "depcheck>@babel/traverse>@babel/helper-environment-visitor": true,
+        "depcheck>@babel/traverse>@babel/helper-function-name": true,
+        "depcheck>@babel/traverse>@babel/helper-split-export-declaration": true
       }
     },
     "@babel/preset-env>@babel/plugin-proposal-private-property-in-object": {
       "packages": {
-        "@babel/plugin-proposal-class-properties>@babel/helper-create-class-features-plugin": true,
         "@babel/preset-env>@babel/helper-plugin-utils": true,
+        "@babel/preset-env>@babel/plugin-proposal-private-methods>@babel/helper-create-class-features-plugin": true,
         "@babel/preset-env>@babel/plugin-syntax-private-property-in-object": true,
         "@babel/preset-env>@babel/plugin-transform-classes>@babel/helper-annotate-as-pure": true
       }
@@ -641,10 +636,15 @@
     "@babel/preset-env>@babel/plugin-transform-classes>@babel/helper-replace-supers": {
       "packages": {
         "@babel/core>@babel/types": true,
-        "@babel/plugin-proposal-class-properties>@babel/helper-create-class-features-plugin>@babel/helper-member-expression-to-functions": true,
         "@babel/preset-env>@babel/plugin-transform-classes>@babel/helper-optimise-call-expression": true,
+        "@babel/preset-env>@babel/plugin-transform-classes>@babel/helper-replace-supers>@babel/helper-member-expression-to-functions": true,
         "depcheck>@babel/traverse": true,
         "depcheck>@babel/traverse>@babel/helper-environment-visitor": true
+      }
+    },
+    "@babel/preset-env>@babel/plugin-transform-classes>@babel/helper-replace-supers>@babel/helper-member-expression-to-functions": {
+      "packages": {
+        "@babel/core>@babel/types": true
       }
     },
     "@babel/preset-env>@babel/plugin-transform-computed-properties": {
@@ -1020,8 +1020,8 @@
       },
       "packages": {
         "@babel/core": true,
-        "@babel/plugin-proposal-class-properties>@babel/helper-create-class-features-plugin": true,
         "@babel/preset-env>@babel/helper-plugin-utils": true,
+        "@babel/preset-env>@babel/plugin-proposal-private-methods>@babel/helper-create-class-features-plugin": true,
         "@babel/preset-typescript>@babel/plugin-transform-typescript>@babel/plugin-syntax-typescript": true
       }
     },
