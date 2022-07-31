@@ -415,10 +415,8 @@ export default class AdvancedTab extends PureComponent {
 
   renderShowConversionInTestnets() {
     const { t } = this.context;
-    const {
-      showFiatInTestnets,
-      setShowFiatConversionOnTestnetsPreference,
-    } = this.props;
+    const { showFiatInTestnets, setShowFiatConversionOnTestnetsPreference } =
+      this.props;
 
     return (
       <div
@@ -765,10 +763,8 @@ export default class AdvancedTab extends PureComponent {
 
   renderDismissSeedBackupReminderControl() {
     const { t } = this.context;
-    const {
-      dismissSeedBackUpReminder,
-      setDismissSeedBackUpReminder,
-    } = this.props;
+    const { dismissSeedBackUpReminder, setDismissSeedBackUpReminder } =
+      this.props;
 
     return (
       <div
