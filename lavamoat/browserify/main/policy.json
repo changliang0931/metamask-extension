@@ -2318,8 +2318,7 @@
     },
     "@eth-optimism/contracts": {
       "packages": {
-        "ethers": true,
-        "ethers>@ethersproject/abstract-provider": true
+        "ethers": true
       }
     },
     "@ethereumjs/common": {
