@@ -2201,8 +2201,8 @@
       }
     },
     "@babel/runtime": {
-      "packages": {
-        "@storybook/api>regenerator-runtime": true
+      "globals": {
+        "regeneratorRuntime": "write"
       }
     },
     "@download/blockies": {

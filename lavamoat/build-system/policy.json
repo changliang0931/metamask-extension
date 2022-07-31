@@ -12,45 +12,7 @@
         "process.emitWarning": true
       },
       "packages": {
-        "@babel/code-frame>@babel/highlight": true
-      }
-    },
-    "@babel/code-frame>@babel/highlight": {
-      "packages": {
-        "@babel/code-frame>@babel/highlight>chalk": true,
-        "lavamoat>@babel/highlight>@babel/helper-validator-identifier": true,
-        "loose-envify>js-tokens": true
-      }
-    },
-    "@babel/code-frame>@babel/highlight>chalk": {
-      "globals": {
-        "process.env.TERM": true,
-        "process.platform": true
-      },
-      "packages": {
-        "@babel/code-frame>@babel/highlight>chalk>ansi-styles": true,
-        "@babel/code-frame>@babel/highlight>chalk>supports-color": true,
-        "mocha>escape-string-regexp": true
-      }
-    },
-    "@babel/code-frame>@babel/highlight>chalk>ansi-styles": {
-      "packages": {
-        "@metamask/jazzicon>color>color-convert": true
-      }
-    },
-    "@babel/code-frame>@babel/highlight>chalk>supports-color": {
-      "builtin": {
-        "os.release": true
-      },
-      "globals": {
-        "process.env": true,
-        "process.platform": true,
-        "process.stderr": true,
-        "process.stdout": true,
-        "process.versions.node.split": true
-      },
-      "packages": {
-        "mocha>supports-color>has-flag": true
+        "lavamoat>@babel/highlight": true
       }
     },
     "@babel/core": {
@@ -75,12 +37,9 @@
         "@babel/core>@babel/helper-compilation-targets": true,
         "@babel/core>@babel/helper-module-transforms": true,
         "@babel/core>@babel/helpers": true,
-        "@babel/core>@babel/parser": true,
         "@babel/core>@babel/template": true,
-        "@babel/core>@babel/traverse": true,
         "@babel/core>@babel/types": true,
         "@babel/core>gensync": true,
-        "@babel/core>json5": true,
         "@babel/core>semver": true,
         "@babel/plugin-proposal-class-properties": true,
         "@babel/plugin-proposal-nullish-coalescing-operator": true,
@@ -90,6 +49,9 @@
         "@babel/preset-env": true,
         "@babel/preset-react": true,
         "@babel/preset-typescript": true,
+        "depcheck>@babel/parser": true,
+        "depcheck>@babel/traverse": true,
+        "depcheck>json5": true,
         "eslint>debug": true,
         "nyc>convert-source-map": true
       }
@@ -169,38 +131,10 @@
         "process.versions.node": true
       },
       "packages": {
-        "@babel/core>@babel/helper-compilation-targets>browserslist": true,
         "@babel/core>@babel/helper-compilation-targets>semver": true,
         "@babel/preset-env>@babel/compat-data": true,
-        "@babel/preset-env>@babel/helper-validator-option": true
-      }
-    },
-    "@babel/core>@babel/helper-compilation-targets>browserslist": {
-      "builtin": {
-        "fs.existsSync": true,
-        "fs.readFileSync": true,
-        "fs.statSync": true,
-        "path.basename": true,
-        "path.dirname": true,
-        "path.join": true,
-        "path.resolve": true
-      },
-      "globals": {
-        "console.warn": true,
-        "process.env.BROWSERSLIST": true,
-        "process.env.BROWSERSLIST_CONFIG": true,
-        "process.env.BROWSERSLIST_DANGEROUS_EXTEND": true,
-        "process.env.BROWSERSLIST_DISABLE_CACHE": true,
-        "process.env.BROWSERSLIST_ENV": true,
-        "process.env.BROWSERSLIST_IGNORE_OLD_DATA": true,
-        "process.env.BROWSERSLIST_STATS": true,
-        "process.env.NODE_ENV": true,
-        "process.versions.node": true
-      },
-      "packages": {
-        "@babel/core>@babel/helper-compilation-targets>browserslist>electron-to-chromium": true,
-        "stylelint>autoprefixer>browserslist>node-releases": true,
-        "stylelint>autoprefixer>caniuse-lite": true
+        "@babel/preset-env>@babel/helper-validator-option": true,
+        "stylelint>autoprefixer>browserslist": true
       }
     },
     "@babel/core>@babel/helper-compilation-targets>semver": {
@@ -218,9 +152,9 @@
       "packages": {
         "@babel/core>@babel/helper-module-transforms>@babel/helper-simple-access": true,
         "@babel/core>@babel/template": true,
-        "@babel/core>@babel/traverse": true,
         "@babel/core>@babel/types": true,
         "@babel/plugin-transform-runtime>@babel/helper-module-imports": true,
+        "depcheck>@babel/traverse": true,
         "depcheck>@babel/traverse>@babel/helper-environment-visitor": true,
         "depcheck>@babel/traverse>@babel/helper-split-export-declaration": true,
         "lavamoat>@babel/highlight>@babel/helper-validator-identifier": true
@@ -234,33 +168,15 @@
     "@babel/core>@babel/helpers": {
       "packages": {
         "@babel/core>@babel/template": true,
-        "@babel/core>@babel/traverse": true,
-        "@babel/core>@babel/types": true
+        "@babel/core>@babel/types": true,
+        "depcheck>@babel/traverse": true
       }
     },
     "@babel/core>@babel/template": {
       "packages": {
         "@babel/code-frame": true,
-        "@babel/core>@babel/template>@babel/parser": true,
-        "@babel/core>@babel/types": true
-      }
-    },
-    "@babel/core>@babel/traverse": {
-      "globals": {
-        "console.log": true,
-        "console.trace": true
-      },
-      "packages": {
-        "@babel/code-frame": true,
-        "@babel/core>@babel/generator": true,
-        "@babel/core>@babel/traverse>@babel/parser": true,
         "@babel/core>@babel/types": true,
-        "depcheck>@babel/traverse>@babel/helper-environment-visitor": true,
-        "depcheck>@babel/traverse>@babel/helper-function-name": true,
-        "depcheck>@babel/traverse>@babel/helper-hoist-variables": true,
-        "depcheck>@babel/traverse>@babel/helper-split-export-declaration": true,
-        "depcheck>@babel/traverse>globals": true,
-        "eslint>debug": true
+        "depcheck>@babel/parser": true
       }
     },
     "@babel/core>@babel/types": {
@@ -273,11 +189,6 @@
         "lavamoat>@babel/highlight>@babel/helper-validator-identifier": true
       }
     },
-    "@babel/core>json5": {
-      "globals": {
-        "console.warn": true
-      }
-    },
     "@babel/core>semver": {
       "globals": {
         "console": true,
@@ -288,6 +199,9 @@
       "builtin": {
         "path": true
       },
+      "globals": {
+        "process.versions": true
+      },
       "packages": {
         "@babel/core": true,
         "@babel/eslint-parser>eslint-scope": true,
@@ -295,9 +209,6 @@
         "@babel/eslint-parser>semver": true,
         "depcheck>@babel/parser": true,
         "eslint": true
-      },
-      "globals": {
-        "process.versions": true
       }
     },
     "@babel/eslint-parser>eslint-scope": {
@@ -358,7 +269,6 @@
       "packages": {
         "@babel/core": true,
         "@babel/core>@babel/helper-compilation-targets": true,
-        "@babel/preset-env>@babel/compat-data": true,
         "@babel/preset-env>@babel/helper-plugin-utils": true,
         "@babel/preset-env>@babel/plugin-syntax-object-rest-spread": true,
         "@babel/preset-env>@babel/plugin-transform-parameters": true
@@ -407,27 +317,8 @@
     "@babel/plugin-transform-runtime>babel-plugin-polyfill-corejs3": {
       "packages": {
         "@babel/core": true,
-        "@babel/plugin-transform-runtime>babel-plugin-polyfill-corejs3>@babel/helper-define-polyfill-provider": true,
+        "@babel/preset-env>babel-plugin-polyfill-corejs3>@babel/helper-define-polyfill-provider": true,
         "@babel/preset-env>core-js-compat": true
-      }
-    },
-    "@babel/plugin-transform-runtime>babel-plugin-polyfill-corejs3>@babel/helper-define-polyfill-provider": {
-      "builtin": {
-        "module": true,
-        "path": true
-      },
-      "globals": {
-        "console.log": true,
-        "console.warn": true,
-        "process.exitCode": "write",
-        "process.versions.node": true
-      },
-      "packages": {
-        "@babel/core": true,
-        "@babel/core>@babel/helper-compilation-targets": true,
-        "@babel/preset-env>@babel/helper-plugin-utils": true,
-        "@babel/preset-env>babel-plugin-polyfill-corejs3>@babel/helper-define-polyfill-provider>lodash.debounce": true,
-        "brfs>resolve": true
       }
     },
     "@babel/plugin-transform-runtime>semver": {
@@ -448,6 +339,7 @@
         "@babel/core>@babel/types": true,
         "@babel/plugin-proposal-class-properties": true,
         "@babel/plugin-proposal-nullish-coalescing-operator": true,
+        "@babel/plugin-proposal-object-rest-spread": true,
         "@babel/plugin-proposal-optional-chaining": true,
         "@babel/preset-env>@babel/compat-data": true,
         "@babel/preset-env>@babel/helper-plugin-utils": true,
@@ -461,7 +353,6 @@
         "@babel/preset-env>@babel/plugin-proposal-json-strings": true,
         "@babel/preset-env>@babel/plugin-proposal-logical-assignment-operators": true,
         "@babel/preset-env>@babel/plugin-proposal-numeric-separator": true,
-        "@babel/preset-env>@babel/plugin-proposal-object-rest-spread": true,
         "@babel/preset-env>@babel/plugin-proposal-optional-catch-binding": true,
         "@babel/preset-env>@babel/plugin-proposal-private-methods": true,
         "@babel/preset-env>@babel/plugin-proposal-private-property-in-object": true,
@@ -580,15 +471,6 @@
       "packages": {
         "@babel/preset-env>@babel/helper-plugin-utils": true,
         "@babel/preset-env>@babel/plugin-syntax-numeric-separator": true
-      }
-    },
-    "@babel/preset-env>@babel/plugin-proposal-object-rest-spread": {
-      "packages": {
-        "@babel/core": true,
-        "@babel/core>@babel/helper-compilation-targets": true,
-        "@babel/preset-env>@babel/helper-plugin-utils": true,
-        "@babel/preset-env>@babel/plugin-syntax-object-rest-spread": true,
-        "@babel/preset-env>@babel/plugin-transform-parameters": true
       }
     },
     "@babel/preset-env>@babel/plugin-proposal-optional-catch-binding": {
@@ -740,10 +622,10 @@
         "@babel/preset-env>@babel/plugin-transform-classes>@babel/helper-annotate-as-pure": true,
         "@babel/preset-env>@babel/plugin-transform-classes>@babel/helper-optimise-call-expression": true,
         "@babel/preset-env>@babel/plugin-transform-classes>@babel/helper-replace-supers": true,
+        "@babel/preset-env>@babel/plugin-transform-classes>globals": true,
         "depcheck>@babel/traverse>@babel/helper-environment-visitor": true,
         "depcheck>@babel/traverse>@babel/helper-function-name": true,
-        "depcheck>@babel/traverse>@babel/helper-split-export-declaration": true,
-        "depcheck>@babel/traverse>globals": true
+        "depcheck>@babel/traverse>@babel/helper-split-export-declaration": true
       }
     },
     "@babel/preset-env>@babel/plugin-transform-classes>@babel/helper-annotate-as-pure": {
@@ -758,10 +640,10 @@
     },
     "@babel/preset-env>@babel/plugin-transform-classes>@babel/helper-replace-supers": {
       "packages": {
-        "@babel/core>@babel/traverse": true,
         "@babel/core>@babel/types": true,
         "@babel/plugin-proposal-class-properties>@babel/helper-create-class-features-plugin>@babel/helper-member-expression-to-functions": true,
         "@babel/preset-env>@babel/plugin-transform-classes>@babel/helper-optimise-call-expression": true,
+        "depcheck>@babel/traverse": true,
         "depcheck>@babel/traverse>@babel/helper-environment-visitor": true
       }
     },
@@ -955,7 +837,7 @@
         "util.inherits": true
       },
       "packages": {
-        "@babel/preset-env>@babel/plugin-transform-regenerator>regenerator-transform>@babel/runtime": true
+        "@babel/runtime": true
       }
     },
     "@babel/preset-env>@babel/plugin-transform-reserved-words": {
@@ -1011,27 +893,8 @@
       "packages": {
         "@babel/core": true,
         "@babel/preset-env>@babel/compat-data": true,
-        "@babel/preset-env>babel-plugin-polyfill-corejs2>@babel/helper-define-polyfill-provider": true,
-        "@babel/preset-env>babel-plugin-polyfill-corejs2>semver": true
-      }
-    },
-    "@babel/preset-env>babel-plugin-polyfill-corejs2>@babel/helper-define-polyfill-provider": {
-      "builtin": {
-        "module": true,
-        "path": true
-      },
-      "globals": {
-        "console.log": true,
-        "console.warn": true,
-        "process.exitCode": "write",
-        "process.versions.node": true
-      },
-      "packages": {
-        "@babel/core": true,
-        "@babel/core>@babel/helper-compilation-targets": true,
-        "@babel/preset-env>@babel/helper-plugin-utils": true,
-        "@babel/preset-env>babel-plugin-polyfill-corejs3>@babel/helper-define-polyfill-provider>lodash.debounce": true,
-        "brfs>resolve": true
+        "@babel/preset-env>babel-plugin-polyfill-corejs2>semver": true,
+        "@babel/preset-env>babel-plugin-polyfill-corejs3>@babel/helper-define-polyfill-provider": true
       }
     },
     "@babel/preset-env>babel-plugin-polyfill-corejs2>semver": {
@@ -1074,26 +937,7 @@
     },
     "@babel/preset-env>babel-plugin-polyfill-regenerator": {
       "packages": {
-        "@babel/preset-env>babel-plugin-polyfill-regenerator>@babel/helper-define-polyfill-provider": true
-      }
-    },
-    "@babel/preset-env>babel-plugin-polyfill-regenerator>@babel/helper-define-polyfill-provider": {
-      "builtin": {
-        "module": true,
-        "path": true
-      },
-      "globals": {
-        "console.log": true,
-        "console.warn": true,
-        "process.exitCode": "write",
-        "process.versions.node": true
-      },
-      "packages": {
-        "@babel/core": true,
-        "@babel/core>@babel/helper-compilation-targets": true,
-        "@babel/preset-env>@babel/helper-plugin-utils": true,
-        "@babel/preset-env>babel-plugin-polyfill-corejs3>@babel/helper-define-polyfill-provider>lodash.debounce": true,
-        "brfs>resolve": true
+        "@babel/preset-env>babel-plugin-polyfill-corejs3>@babel/helper-define-polyfill-provider": true
       }
     },
     "@babel/preset-env>core-js-compat": {
@@ -2138,6 +1982,24 @@
         "nyc>glob": true
       }
     },
+    "depcheck>@babel/traverse": {
+      "globals": {
+        "console.log": true,
+        "console.trace": true
+      },
+      "packages": {
+        "@babel/code-frame": true,
+        "@babel/core>@babel/generator": true,
+        "@babel/core>@babel/types": true,
+        "depcheck>@babel/parser": true,
+        "depcheck>@babel/traverse>@babel/helper-environment-visitor": true,
+        "depcheck>@babel/traverse>@babel/helper-function-name": true,
+        "depcheck>@babel/traverse>@babel/helper-hoist-variables": true,
+        "depcheck>@babel/traverse>@babel/helper-split-export-declaration": true,
+        "depcheck>@babel/traverse>globals": true,
+        "eslint>debug": true
+      }
+    },
     "depcheck>@babel/traverse>@babel/helper-function-name": {
       "packages": {
         "@babel/core>@babel/template": true,
@@ -2156,57 +2018,10 @@
     },
     "depcheck>cosmiconfig>parse-json": {
       "packages": {
-        "depcheck>cosmiconfig>parse-json>@babel/code-frame": true,
+        "@babel/code-frame": true,
         "depcheck>cosmiconfig>parse-json>error-ex": true,
         "depcheck>cosmiconfig>parse-json>lines-and-columns": true,
         "webpack>json-parse-better-errors": true
-      }
-    },
-    "depcheck>cosmiconfig>parse-json>@babel/code-frame": {
-      "globals": {
-        "console.warn": true,
-        "process.emitWarning": true
-      },
-      "packages": {
-        "depcheck>cosmiconfig>parse-json>@babel/code-frame>@babel/highlight": true
-      }
-    },
-    "depcheck>cosmiconfig>parse-json>@babel/code-frame>@babel/highlight": {
-      "packages": {
-        "depcheck>cosmiconfig>parse-json>@babel/code-frame>@babel/highlight>chalk": true,
-        "lavamoat>@babel/highlight>@babel/helper-validator-identifier": true,
-        "loose-envify>js-tokens": true
-      }
-    },
-    "depcheck>cosmiconfig>parse-json>@babel/code-frame>@babel/highlight>chalk": {
-      "globals": {
-        "process.env.TERM": true,
-        "process.platform": true
-      },
-      "packages": {
-        "depcheck>cosmiconfig>parse-json>@babel/code-frame>@babel/highlight>chalk>ansi-styles": true,
-        "depcheck>cosmiconfig>parse-json>@babel/code-frame>@babel/highlight>chalk>supports-color": true,
-        "mocha>escape-string-regexp": true
-      }
-    },
-    "depcheck>cosmiconfig>parse-json>@babel/code-frame>@babel/highlight>chalk>ansi-styles": {
-      "packages": {
-        "@metamask/jazzicon>color>color-convert": true
-      }
-    },
-    "depcheck>cosmiconfig>parse-json>@babel/code-frame>@babel/highlight>chalk>supports-color": {
-      "builtin": {
-        "os.release": true
-      },
-      "globals": {
-        "process.env": true,
-        "process.platform": true,
-        "process.stderr": true,
-        "process.stdout": true,
-        "process.versions.node.split": true
-      },
-      "packages": {
-        "mocha>supports-color>has-flag": true
       }
     },
     "depcheck>cosmiconfig>parse-json>error-ex": {
@@ -2234,6 +2049,11 @@
       },
       "packages": {
         "enzyme>has": true
+      }
+    },
+    "depcheck>json5": {
+      "globals": {
+        "console.warn": true
       }
     },
     "depcheck>readdirp": {
@@ -2913,10 +2733,10 @@
         "eslint-plugin-prettier": true,
         "eslint-plugin-react": true,
         "eslint-plugin-react-hooks": true,
-        "eslint>@eslint/eslintrc>globals": true,
         "eslint>@eslint/eslintrc>strip-json-comments": true,
         "eslint>ajv": true,
         "eslint>debug": true,
+        "eslint>globals": true,
         "eslint>minimatch": true,
         "globby>ignore": true
       }
@@ -3425,7 +3245,7 @@
         "process.env.NODE_ENV": true
       },
       "packages": {
-        "@storybook/react>react-dev-utils>browserslist>electron-to-chromium": true,
+        "stylelint>autoprefixer>browserslist>electron-to-chromium": true,
         "stylelint>autoprefixer>caniuse-lite": true
       }
     },
@@ -5650,6 +5470,44 @@
         "lavamoat-browserify>readable-stream": true
       }
     },
+    "lavamoat>@babel/highlight": {
+      "packages": {
+        "lavamoat>@babel/highlight>@babel/helper-validator-identifier": true,
+        "lavamoat>@babel/highlight>chalk": true,
+        "loose-envify>js-tokens": true
+      }
+    },
+    "lavamoat>@babel/highlight>chalk": {
+      "globals": {
+        "process.env.TERM": true,
+        "process.platform": true
+      },
+      "packages": {
+        "lavamoat>@babel/highlight>chalk>ansi-styles": true,
+        "lavamoat>@babel/highlight>chalk>supports-color": true,
+        "mocha>escape-string-regexp": true
+      }
+    },
+    "lavamoat>@babel/highlight>chalk>ansi-styles": {
+      "packages": {
+        "@metamask/jazzicon>color>color-convert": true
+      }
+    },
+    "lavamoat>@babel/highlight>chalk>supports-color": {
+      "builtin": {
+        "os.release": true
+      },
+      "globals": {
+        "process.env": true,
+        "process.platform": true,
+        "process.stderr": true,
+        "process.stdout": true,
+        "process.versions.node.split": true
+      },
+      "packages": {
+        "mocha>supports-color>has-flag": true
+      }
+    },
     "lavamoat>@lavamoat/aa": {
       "builtin": {
         "fs.readFileSync": true,
@@ -5750,25 +5608,7 @@
       },
       "packages": {
         "depcheck>@babel/parser": true,
-        "lavamoat>lavamoat-tofu>@babel/traverse": true
-      }
-    },
-    "lavamoat>lavamoat-tofu>@babel/traverse": {
-      "globals": {
-        "console.log": true,
-        "console.trace": true
-      },
-      "packages": {
-        "@babel/code-frame": true,
-        "@babel/core>@babel/generator": true,
-        "@babel/core>@babel/types": true,
-        "depcheck>@babel/traverse>@babel/helper-environment-visitor": true,
-        "depcheck>@babel/traverse>@babel/helper-function-name": true,
-        "depcheck>@babel/traverse>@babel/helper-hoist-variables": true,
-        "depcheck>@babel/traverse>@babel/helper-split-export-declaration": true,
-        "depcheck>@babel/traverse>globals": true,
-        "eslint>debug": true,
-        "lavamoat>lavamoat-tofu>@babel/traverse>@babel/parser": true
+        "depcheck>@babel/traverse": true
       }
     },
     "lavamoat>object.fromentries": {
@@ -6495,49 +6335,9 @@
         "__dirname": true
       },
       "packages": {
-        "stylelint>@stylelint/postcss-css-in-js>@babel/core": true,
+        "@babel/core": true,
         "stylelint>postcss": true,
         "stylelint>postcss-syntax": true
-      }
-    },
-    "stylelint>@stylelint/postcss-css-in-js>@babel/core": {
-      "builtin": {
-        "fs": true,
-        "module": true,
-        "path": true,
-        "url": true,
-        "v8": true
-      },
-      "globals": {
-        "console.log": true,
-        "process.cwd": true,
-        "process.env.BABEL_ENV": true,
-        "process.env.BABEL_SHOW_CONFIG_FOR": true,
-        "process.env.NODE_ENV": true,
-        "process.versions.node": true
-      },
-      "packages": {
-        "@babel/code-frame": true,
-        "@babel/core>@babel/generator": true,
-        "@babel/core>@babel/helper-compilation-targets": true,
-        "@babel/core>@babel/helper-module-transforms": true,
-        "@babel/core>@babel/helpers": true,
-        "@babel/core>@babel/template": true,
-        "@babel/core>@babel/traverse": true,
-        "@babel/core>@babel/types": true,
-        "@babel/core>gensync": true,
-        "@babel/core>json5": true,
-        "eslint>debug": true,
-        "nyc>convert-source-map": true,
-        "stylelint>@stylelint/postcss-css-in-js>@babel/core>@babel/parser": true,
-        "stylelint>@stylelint/postcss-css-in-js>@babel/core>semver": true,
-        "stylelint>@stylelint/postcss-css-in-js>@babel/core>source-map": true
-      }
-    },
-    "stylelint>@stylelint/postcss-css-in-js>@babel/core>semver": {
-      "globals": {
-        "console": true,
-        "process": true
       }
     },
     "stylelint>@stylelint/postcss-markdown": {
@@ -6671,9 +6471,9 @@
         "stylelint>autoprefixer>caniuse-lite": true,
         "stylelint>autoprefixer>normalize-range": true,
         "stylelint>autoprefixer>num2fraction": true,
-        "stylelint>autoprefixer>picocolors": true,
         "stylelint>postcss": true,
-        "stylelint>postcss-value-parser": true
+        "stylelint>postcss-value-parser": true,
+        "stylelint>postcss>picocolors": true
       }
     },
     "stylelint>autoprefixer>browserslist": {
@@ -6702,16 +6502,6 @@
         "stylelint>autoprefixer>browserslist>electron-to-chromium": true,
         "stylelint>autoprefixer>browserslist>node-releases": true,
         "stylelint>autoprefixer>caniuse-lite": true
-      }
-    },
-    "stylelint>autoprefixer>picocolors": {
-      "builtin": {
-        "tty.isatty": true
-      },
-      "globals": {
-        "process.argv.includes": true,
-        "process.env": true,
-        "process.platform": true
       }
     },
     "stylelint>chalk": {
