@@ -15,6 +15,7 @@ import LogoDepositEth from './logo-deposit-eth';
 import LogoLedger from './logo-ledger';
 import LogoQRBased from './logo-qr-based';
 import LogoTrezor from './logo-trezor';
+import LogoJuBiter from './logo-jubiter';
 import LogoLattice from './logo-lattice';
 
 import README from './README.mdx';
@@ -76,6 +77,7 @@ export const DefaultStory = (args) => (
     <LogoItem Component={<LogoMoonPay {...args} />} />
     <LogoItem Component={<LogoLedger {...args} />} />
     <LogoItem Component={<LogoQRBased {...args} />} />
+    <LogoItem Component={<LogoJuBiter {...args} />} />
     <LogoItem Component={<LogoTrezor {...args} />} />
     <LogoItem Component={<LogoLattice {...args} />} />
   </div>

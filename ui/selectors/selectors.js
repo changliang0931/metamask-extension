@@ -224,6 +224,7 @@ export function getAccountType(state) {
 
   switch (type) {
     case KEYRING_TYPES.TREZOR:
+    case KEYRING_TYPES.JUBITER:
     case KEYRING_TYPES.LEDGER:
     case KEYRING_TYPES.LATTICE:
       return 'hardware';

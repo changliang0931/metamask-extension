@@ -34,6 +34,7 @@ export default class AppStateController extends EventEmitter {
       enableEIP1559V2NoticeDismissed: false,
       showTestnetMessageInDropdown: true,
       trezorModel: null,
+      jubiterModel: null,
       ...initState,
       qrHardware: {},
       collectiblesDropdownState: {},
@@ -259,7 +260,10 @@ export default class AppStateController extends EventEmitter {
   setTrezorModel(trezorModel) {
     this.store.updateState({ trezorModel });
   }
-
+  
+  setJuBiterModel(jubiterModel) {
+    this.store.updateState({ jubiterModel });
+  }
   /**
    * A setter for the `collectiblesDetectionNoticeDismissed` property
    *

@@ -5,8 +5,8 @@ import Button from '../../../components/ui/button';
 import LogoLedger from '../../../components/ui/logo/logo-ledger';
 import LogoQRBased from '../../../components/ui/logo/logo-qr-based';
 import LogoTrezor from '../../../components/ui/logo/logo-trezor';
+import LogoJuBiter from '../../../components/ui/logo/logo-jubiter';
 import LogoLattice from '../../../components/ui/logo/logo-lattice';
-
 import {
   DEVICE_NAMES,
   LEDGER_TRANSPORT_TYPES,
@@ -43,6 +43,18 @@ export default class SelectHardware extends Component {
         onClick={(_) => this.setState({ selectedDevice: DEVICE_NAMES.TREZOR })}
       >
         <LogoTrezor className="hw-connect__btn__img" ariaLabel="Trezor" />
+      </button>
+    );
+  }
+  renderConnectToJubiterButton() {
+    return (
+      <button
+        className={classnames('hw-connect__btn', {
+          selected: this.state.selectedDevice === DEVICE_NAMES.JUBITER,
+        })}
+        onClick={(_) => this.setState({ selectedDevice: DEVICE_NAMES.JUBITER })}
+      >
+        <LogoJuBiter className="hw-connect__btn__img" ariaLabel="JuBiter" />
       </button>
     );
   }
@@ -89,10 +101,17 @@ export default class SelectHardware extends Component {
   renderButtons() {
     return (
       <>
-        <div className="hw-connect__btn-wrapper">
+        <div className="hw-connect__btn-wrapper" >
+         {this.renderConnectToJubiterButton()}
+        </div>
+        <div className="hw-connect__btn-wrapper"
+          style={{ margin: '10px 0 0 0' }}
+        >
           {this.renderConnectToLedgerButton()}
           {this.renderConnectToTrezorButton()}
+         
         </div>
+        
         <div
           className="hw-connect__btn-wrapper"
           style={{ margin: '10px 0 0 0' }}

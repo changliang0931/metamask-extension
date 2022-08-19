@@ -28,6 +28,7 @@ const LEDGER_HD_PATHS = [
   { name: 'Ledger Live', value: LEDGER_LIVE_PATH },
   { name: 'Legacy (MEW / MyCrypto)', value: MEW_PATH },
   { name: `BIP44 Standard (e.g. MetaMask, Trezor)`, value: BIP44_PATH },
+  { name: `BIP44 Standard (e.g. MetaMask, JuBiter)`, value: BIP44_PATH },
 ];
 
 const LATTICE_STANDARD_BIP44_PATH = `m/44'/60'/0'/0/x`;
@@ -50,11 +51,16 @@ const TREZOR_HD_PATHS = [
   { name: `BIP44 Standard (e.g. MetaMask, Trezor)`, value: BIP44_PATH },
   { name: `Trezor Testnets`, value: TREZOR_TESTNET_PATH },
 ];
-
+const JUBITER_TESTNET_PATH = `m/44'/1'/0'/0`;
+const JUBITER_HD_PATHS = [
+  { name: `BIP44 Standard (e.g. MetaMask, JuBiter)`, value: BIP44_PATH },
+  { name: `JuBiter Testnets`, value: JUBITER_TESTNET_PATH },
+];
 const HD_PATHS = {
   ledger: LEDGER_HD_PATHS,
   lattice: LATTICE_HD_PATHS,
   trezor: TREZOR_HD_PATHS,
+  jubiter: JUBITER_HD_PATHS,
 };
 
 class ConnectHardwareForm extends Component {

@@ -18,6 +18,7 @@ import { Mutex } from 'await-semaphore';
 import { stripHexPrefix } from 'ethereumjs-util';
 import log from 'loglevel';
 import TrezorKeyring from 'eth-trezor-keyring';
+import JuBiterKeyring from 'eth-jubiter-keyring';
 import LedgerBridgeKeyring from '@metamask/eth-ledger-bridge-keyring';
 import LatticeKeyring from 'eth-lattice-keyring';
 import { MetaMaskKeyring as QRHardwareKeyring } from '@keystonehq/metamask-airgapped-keyring';
@@ -557,6 +558,7 @@ export default class MetamaskController extends EventEmitter {
 
     const additionalKeyrings = [
       TrezorKeyring,
+      JuBiterKeyring,
       LedgerBridgeKeyring,
       LatticeKeyring,
       QRHardwareKeyring,
@@ -2254,6 +2256,7 @@ export default class MetamaskController extends EventEmitter {
         .map((address) => toChecksumHexAddress(address)),
       ledger: [],
       trezor: [],
+      jubiter: [],
       lattice: [],
     };
 
@@ -2363,6 +2366,9 @@ export default class MetamaskController extends EventEmitter {
       case DEVICE_NAMES.TREZOR:
         keyringName = TrezorKeyring.type;
         break;
+      case DEVICE_NAMES.JUBITER:
+        keyringName = JuBiterKeyring.type;
+        break;
       case DEVICE_NAMES.LEDGER:
         keyringName = LedgerBridgeKeyring.type;
         break;
@@ -2393,7 +2399,10 @@ export default class MetamaskController extends EventEmitter {
       const model = keyring.getModel();
       this.appStateController.setTrezorModel(model);
     }
-
+    if (deviceName === DEVICE_NAMES.JUBITER) {
+      const model = keyring.getModel();
+      this.appStateController.setJuBiterModel(model);
+    }
     keyring.network = this.networkController.getProviderConfig().type;
 
     return keyring;
@@ -2478,6 +2487,7 @@ export default class MetamaskController extends EventEmitter {
     const keyring = await this.keyringController.getKeyringForAccount(address);
     switch (keyring.type) {
       case KEYRING_TYPES.TREZOR:
+      case KEYRING_TYPES.JUBITER:
       case KEYRING_TYPES.LATTICE:
       case KEYRING_TYPES.QR:
       case KEYRING_TYPES.LEDGER:
@@ -3033,7 +3043,13 @@ export default class MetamaskController extends EventEmitter {
           );
         });
       }
-
+      case KEYRING_TYPES.JUBITER: {
+        return new Promise((_, reject) => {
+          reject(
+            new Error('JuBiter does not support eth_getEncryptionPublicKey.'),
+          );
+        });
+      }
       case KEYRING_TYPES.LATTICE: {
         return new Promise((_, reject) => {
           reject(
@@ -4257,7 +4273,12 @@ export default class MetamaskController extends EventEmitter {
     if (trezorKeyring) {
       trezorKeyring.dispose();
     }
-
+    const [jubiterKeyring] = this.keyringController.getKeyringsByType(
+      KEYRING_TYPES.JUBITER,
+    );
+    if (jubiterKeyring) {
+      jubiterKeyring.dispose();
+    }
     const [ledgerKeyring] = this.keyringController.getKeyringsByType(
       KEYRING_TYPES.LEDGER,
     );

@@ -68,6 +68,7 @@ class AccountList extends Component {
       DEVICE_NAMES.LEDGER,
       DEVICE_NAMES.LATTICE,
       DEVICE_NAMES.TREZOR,
+      DEVICE_NAMES.JUBITER,
     ].includes(device.toLowerCase());
     return (
       <div className="hw-connect">

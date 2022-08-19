@@ -28,6 +28,9 @@ export default function KeyRingLabel({ keyring }) {
     case KEYRING_TYPES.TREZOR:
       label = KEYRING_NAMES.TREZOR;
       break;
+    case KEYRING_TYPES.JUBITER:
+      label = KEYRING_NAMES.JUBITER;
+      break;
     case KEYRING_TYPES.LEDGER:
       label = KEYRING_NAMES.LEDGER;
       break;

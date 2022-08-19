@@ -43,6 +43,10 @@
     {
       "matches": ["*://connect.trezor.io/*/popup.html"],
       "js": ["vendor/trezor/content-script.js"]
+    },
+    {
+      "matches": ["*://jubiterwallet.github.io/*/popup.html"],
+      "js": ["vendor/jubiter/content-script.js"]
     }
   ],
   "default_locale": "en",

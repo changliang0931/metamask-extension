@@ -83,6 +83,10 @@ export default {
         name: `BIP44 Standard (e.g. MetaMask, Trezor)`,
         value: `m/44'/60'/0'/0`,
       },
+      {
+        name: `BIP44 Standard (e.g. MetaMask, JuBiter)`,
+        value: `m/44'/60'/0'/0`,
+      },
     ],
   },
 };

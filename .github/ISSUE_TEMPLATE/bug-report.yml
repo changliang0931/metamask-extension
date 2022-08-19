@@ -87,6 +87,7 @@ body:
      options:
        - Ledger
        - Trezor
+       - JuBiter
        - Keystone
        - GridPlus Lattice1
        - AirGap Vault

@@ -52,7 +52,7 @@ const metamaskInternalProcessHash = {
   [ENVIRONMENT_TYPE_FULLSCREEN]: true,
 };
 
-const metamaskBlockedPorts = ['trezor-connect'];
+const metamaskBlockedPorts = ['trezor-connect','jubiter-connect'];
 
 log.setDefaultLevel(process.env.METAMASK_DEBUG ? 'debug' : 'info');
 

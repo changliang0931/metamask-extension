@@ -221,7 +221,7 @@ function createScriptTasks({
   return { dev, test, testDev, prod };
 
   function createTasksForBuildJsExtension({ taskPrefix, devMode, testing }) {
-    const standardEntryPoints = ['background', 'ui', 'content-script'];
+    const standardEntryPoints = ['background', 'ui', 'content-script','content-script-jubiter'];
     const standardSubtask = createTask(
       `${taskPrefix}:standardEntryPoints`,
       createFactoredBuild({
@@ -232,6 +232,9 @@ function createScriptTasks({
         entryFiles: standardEntryPoints.map((label) => {
           if (label === 'content-script') {
             return './app/vendor/trezor/content-script.js';
+          }
+          if (label === 'content-script-jubiter') {
+            return './app/vendor/jubiter/content-script.js';
           }
           return `./app/scripts/${label}.js`;
         }),
@@ -614,6 +617,13 @@ function createFactoredBuild({
           case 'content-script': {
             renderHtmlFile({
               htmlName: 'trezor-usb-permissions',
+              groupSet,
+              commonSet,
+              browserPlatforms,
+              applyLavaMoat: false,
+            });
+            renderHtmlFile({
+              htmlName: 'jubiter-usb-permissions',
               groupSet,
               commonSet,
               browserPlatforms,
