@@ -1,3 +1,28 @@
+# build
+
+
+```sh
+
+copy .metamaskrc.dist  .metamaskrc
+
+[register infura](https://developer.metamask.io/register)
+
+vi .metamaskrc
+
+INFURA_PROJECT_ID=b6bf7d3508c941499b10025c0776eaf8
+
+corepack enable
+
+yarn
+
+yarn run dist
+
+
+copy builds
+
+
+```
+
 # MetaMask Browser Extension
 
 You can find the latest version of MetaMask on [our official website](https://metamask.io/). For help using MetaMask, visit our [User Support Site](https://support.metamask.io/).
