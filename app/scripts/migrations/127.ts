@@ -94,7 +94,7 @@ function transformState(
       chainId: '0x1',
       ticker: 'ETH',
       nickname: MAINNET_DISPLAY_NAME,
-      rpcUrl: 'https://mainnet.infura.io/v3/{infuraProjectId}',
+      rpcUrl: 'https://eth.drpc.org',//'https://mainnet.infura.io/v3/{infuraProjectId}',
       rpcPrefs: { blockExplorerUrl: 'https://etherscan.io' },
     },
     {

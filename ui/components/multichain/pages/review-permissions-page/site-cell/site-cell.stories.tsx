@@ -44,7 +44,7 @@ export default {
         rpcEndpoints: [
           {
             networkClientId: 'mainnet',
-            url: 'https://mainnet.infura.io/v3/{infuraProjectId}',
+            url: 'https://eth.drpc.org',//'https://mainnet.infura.io/v3/{infuraProjectId}',
             type: 'infura',
           },
         ],
