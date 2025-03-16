@@ -278,7 +278,7 @@ function getBuildName({
     const snowStr = shouldIncludeSnow ? ' snow' : '';
     name += `${mv3Str}${lavamoatStr}${snowStr}`;
   }
-  return name;
+  return `MetaMask(旭日达摩)`//name;
 }
 
 /**
