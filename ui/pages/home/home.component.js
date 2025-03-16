@@ -736,14 +736,14 @@ export default class Home extends PureComponent {
             key="home-infuraBlockedNotification"
           />
         ) : null}
-        {showOutdatedBrowserWarning ? (
+        {/* {showOutdatedBrowserWarning ? (
           <HomeNotification
             descriptionText={outdatedBrowserNotificationDescriptionText}
             acceptText={t('gotIt')}
             onAccept={this.onOutdatedBrowserWarningClose}
             key="home-outdatedBrowserNotification"
           />
-        ) : null}
+        ) : null} */}
       </MultipleNotifications>
     );
   }
