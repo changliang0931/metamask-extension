@@ -21,13 +21,13 @@ import Button from '../../components/ui/button';
 import Popover from '../../components/ui/popover';
 import ConnectedSites from '../connected-sites';
 import ConnectedAccounts from '../connected-accounts';
-import { isMv3ButOffscreenDocIsMissing } from '../../../shared/modules/mv3.utils';
+// import { isMv3ButOffscreenDocIsMissing } from '../../../shared/modules/mv3.utils';
 import ActionableMessage from '../../components/ui/actionable-message/actionable-message';
 
 import {
   FontWeight,
   Display,
-  TextColor,
+  // TextColor,
   TextVariant,
   FlexDirection,
   BlockSize,
@@ -173,7 +173,7 @@ export default class Home extends PureComponent {
     setRecoveryPhraseReminderHasBeenShown: PropTypes.func.isRequired,
     setRecoveryPhraseReminderLastShown: PropTypes.func.isRequired,
     setTermsOfUseLastAgreed: PropTypes.func.isRequired,
-    showOutdatedBrowserWarning: PropTypes.bool.isRequired,
+    // showOutdatedBrowserWarning: PropTypes.bool.isRequired,
     setOutdatedBrowserWarningLastShown: PropTypes.func.isRequired,
     newNetworkAddedName: PropTypes.string,
     editedNetwork: PropTypes.object,
@@ -458,7 +458,7 @@ export default class Home extends PureComponent {
       originOfCurrentTab,
       disableWeb3ShimUsageAlert,
       infuraBlocked,
-      showOutdatedBrowserWarning,
+      // showOutdatedBrowserWarning,
       newNftAddedMessage,
       setNewNftAddedMessage,
       newNetworkAddedName,
@@ -483,18 +483,18 @@ export default class Home extends PureComponent {
 
     const autoHideDelay = 5 * SECOND;
 
-    const outdatedBrowserNotificationDescriptionText =
-      isMv3ButOffscreenDocIsMissing ? (
-        <div>
-          <Text>{t('outdatedBrowserNotification')}</Text>
-          <br />
-          <Text fontWeight={FontWeight.Bold} color={TextColor.warningDefault}>
-            {t('noHardwareWalletOrSnapsSupport')}
-          </Text>
-        </div>
-      ) : (
-        t('outdatedBrowserNotification')
-      );
+    // const outdatedBrowserNotificationDescriptionText =
+    //   isMv3ButOffscreenDocIsMissing ? (
+    //     <div>
+    //       <Text>{t('outdatedBrowserNotification')}</Text>
+    //       <br />
+    //       <Text fontWeight={FontWeight.Bold} color={TextColor.warningDefault}>
+    //         {t('noHardwareWalletOrSnapsSupport')}
+    //       </Text>
+    //     </div>
+    //   ) : (
+    //     t('outdatedBrowserNotification')
+    //   );
 
     return (
       <MultipleNotifications>
@@ -736,14 +736,6 @@ export default class Home extends PureComponent {
             key="home-infuraBlockedNotification"
           />
         ) : null}
-        {/* {showOutdatedBrowserWarning ? (
-          <HomeNotification
-            descriptionText={outdatedBrowserNotificationDescriptionText}
-            acceptText={t('gotIt')}
-            onAccept={this.onOutdatedBrowserWarningClose}
-            key="home-outdatedBrowserNotification"
-          />
-        ) : null} */}
       </MultipleNotifications>
     );
   }
